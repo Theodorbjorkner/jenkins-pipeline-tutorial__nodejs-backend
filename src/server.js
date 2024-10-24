@@ -5,7 +5,7 @@ let serverStartTimestamp;
 
 function startServer(port){
     app.listen(port, () =>{
-        console.log("the server is listening at 127.0.0.1:${port}");
+        console.log("the server is listening at 127.0.0.1:${15476}");
         serverStartTimestamp = getTimestamp();
     });
 }
@@ -17,8 +17,8 @@ app.get("/", (req, res) => {
     const runningTimeSeconds = Math.floor(runningTime / 1000);
 
     // generate response message
-    const responseMessage = `The time is now ${timeStamp}<br />` + 
-    `the server is running for ${runningTimeSeconds} seconds <br />` + 
+    const responseMessage = `The time is now ${timeStamp}<br> /n` + 
+    `the server is running for ${runningTimeSeconds} seconds <br> /n` + 
     `App version ${process.env.npm_package_version}`;
   // sending the response
   res.statusCode = 200;
@@ -31,4 +31,4 @@ function getTimestamp(){
     return timeStamp; 
 }
 
-module.exports = {startServer};
+module.exports = {startServer, app};
