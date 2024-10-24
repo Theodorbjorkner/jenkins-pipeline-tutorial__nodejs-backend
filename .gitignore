@@ -1,2 +1,5 @@
 #IDE   
 *.code-workspace
+
+#npm
+C:\Users\theod\nodejs-backend\node_modules
